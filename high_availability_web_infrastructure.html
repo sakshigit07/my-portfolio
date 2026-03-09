@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi | High-Availability AWS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --accent: #22d3ee;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0f;
+            color: #e5e7eb;
+            cursor: none;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(34,211,238,0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.2s ease-out;
+        }
+
+        /* Cyber-Steel Glass Panels */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .tech-tag {
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+        .step-glow {
+            position: relative;
+        }
+        .step-glow::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="fixed w-full z-50 backdrop-blur-md bg-black/30 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center group transition-all duration-300 hover:opacity-90">
+    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center mr-3 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+    </div>
+    <div>
+        <div class="text-xl font-bold tracking-tight text-white">SAKSHI YESARE</div>
+        <div class="text-xs text-cyan-300 uppercase tracking-widest">Cloud & DevOps</div>
+    </div>
+</a>
+                <nav>
+                    <a href="index.html#projects" class="text-sm uppercase tracking-widest text-gray-400 hover:text-cyan-300 transition-colors">
+                        Back to Portfolio
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative min-h-screen pt-40 pb-20">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.05)_0%,transparent_50%)]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="mb-16">
+                <div class="flex items-center space-x-2 text-cyan-400 font-bold tracking-widest text-xs uppercase mb-4">
+                    <span class="w-8 h-[1px] bg-cyan-400"></span>
+                    <span>System Architecture • High Availability</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                    Scalable <span class="text-gradient">Infrastructure</span> on AWS
+                </h1>
+                <p class="text-gray-400 text-xl leading-relaxed">
+                    A resilient, three-tier architecture designed to eliminate single points of failure and scale automatically based on traffic demand.
+                </p>
+            </div>
+
+            <div class="glass-panel p-8 mb-12">
+                <h2 class="text-lg font-bold mb-6 flex items-center">
+                    <i class="fas fa-layer-group mr-3 text-cyan-400"></i> Provisioned Infrastructure
+                </h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag"><i class="fab fa-aws mr-2"></i>VPC & Networking</span>
+                    <span class="tech-tag"><i class="fas fa-hdd mr-2"></i>EC2 & ASG</span>
+                    <span class="tech-tag"><i class="fas fa-network-wired mr-2"></i>ALB</span>
+                    <span class="tech-tag"><i class="fas fa-database mr-2"></i>Multi-AZ RDS</span>
+                    <span class="tech-tag"><i class="fab fa-linux mr-2"></i>Amazon Linux</span>
+                    <span class="tech-tag"><i class="fas fa-shield-alt mr-2"></i>IAM & Security Groups</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">Project Objective</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        The goal was to architect a <b>production-grade environment</b> that moves beyond single-server setups. By leveraging multiple Availability Zones (AZs) and managed services, the infrastructure ensures business continuity even during data center outages.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Multi-AZ Redundancy:</strong> Resources are distributed across multiple Availability Zones to ensure high availability.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Elastic Scalability:</strong> An Auto Scaling Group (ASG) monitors CPU metrics to launch or terminate EC2 instances dynamically.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Data Resilience:</strong> Amazon RDS is deployed in a Multi-AZ configuration with a synchronous standby replica for instant failover.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Traffic Distribution:</strong> An Application Load Balancer (ALB) acts as the single entry point, health-checking instances and routing traffic efficiently.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-10 mb-16">
+                <h2 class="text-3xl font-bold mb-8">☁️ Architecture Deep Dive</h2>
+                
+                <div class="bg-black/40 rounded-2xl border border-white/5 p-4 mb-10 overflow-hidden">
+                    
+                    <div class="text-center mt-4 text-xs text-gray-500 mono tracking-widest uppercase">
+                        *Resilient Three-Tier VPC Architecture with ALB and Multi-AZ RDS*
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="ml-6 step-glow">
+                        <h3 class="text-white font-bold mb-2">The Workflow Execution:</h3>
+                        <div class="text-gray-400 text-sm leading-relaxed space-y-4">
+                            <p><b>1. Networking:</b> A custom VPC (10.0.0.0/16) provides an isolated network environment where traffic enters through the Internet Gateway (IGW).</p>
+                            <p><b>2. The Entry Point:</b> The Application Load Balancer (ALB) sits in the Public Subnets, health-checking instances and distributing HTTP/S traffic efficiently.</p>
+                            <p><b>3. The Compute Layer:</b> EC2 instances operate within an Auto Scaling Group. If an instance fails, the ASG automatically triggers a self-healing replacement.</p>
+                            <p><b>4. The Data Layer:</b> RDS is isolated in the deepest Private Subnets, accessible only from the App tier Security Group following the principle of least-privilege.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-cyan-500/30 pl-8 mb-16">
+                <h2 class="text-2xl font-bold mb-6 uppercase tracking-wider text-cyan-400">Key Outcomes</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">VPC & Subnet Isolation Mastery</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">Self-Healing Infrastructure Deployment</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">SSL Termination & Health Configs</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">Multi-AZ Database Synchronization</li>
+                </ul>
+            </div>
+
+            <div class="text-center py-12 border-t border-white/10">
+                <a href="https://github.com/sakshigit07" class="inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all group">
+                    <i class="fab fa-github text-xl"></i>
+                    <span>Examine Documentation</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        document.querySelectorAll('a, .glass-panel').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>

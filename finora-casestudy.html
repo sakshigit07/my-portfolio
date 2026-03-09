@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi | Finora Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --accent: #22d3ee;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0f;
+            color: #e5e7eb;
+            cursor: none;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(34,211,238,0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.2s ease-out;
+        }
+
+        /* Case Study Specific Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+        .tech-tag {
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+        .step-glow {
+            position: relative;
+        }
+        .step-glow::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="fixed w-full z-50 backdrop-blur-md bg-black/30 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold tracking-tight uppercase">SAKSHI</div>
+                        <div class="text-xs text-cyan-300 uppercase tracking-widest">Case Study</div>
+                    </div>
+                </div>
+                <nav>
+                    <a href="index.html" class="text-sm uppercase tracking-widest text-gray-400 hover:text-cyan-300 transition-colors">
+                        Back to Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative min-h-screen pt-40 pb-20">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.05)_0%,transparent_50%)]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="mb-16">
+                <div class="flex items-center space-x-2 text-cyan-400 font-bold tracking-widest text-xs uppercase mb-4">
+                    <span class="w-8 h-[1px] bg-cyan-400"></span>
+                    <span>Individual Build • AWS Deployment</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                    Building <span class="text-gradient">Finora:</span> Personal Finance on AWS
+                </h1>
+                <p class="text-gray-400 text-xl leading-relaxed">
+                    A full-stack web application designed for organized income and expense tracking, implemented with foundational cloud services.
+                </p>
+            </div>
+
+            <div class="glass-panel p-8 mb-12">
+                <h2 class="text-lg font-bold mb-6 flex items-center">
+                    <i class="fas fa-layer-group mr-3 text-cyan-400"></i> Tech Stack & Infrastructure
+                </h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag"><i class="fab fa-aws mr-2"></i>AWS EC2 (Amazon Linux)</span>
+                    <span class="tech-tag"><i class="fas fa-database mr-2"></i>DynamoDB (NoSQL)</span>
+                    <span class="tech-tag"><i class="fab fa-php mr-2"></i>PHP 8.x Backend</span>
+                    <span class="tech-tag"><i class="fas fa-server mr-2"></i>Nginx Web Server</span>
+                    <span class="tech-tag"><i class="fas fa-envelope mr-2"></i>AWS SES</span>
+                    <span class="tech-tag"><i class="fas fa-shield-alt mr-2"></i>IAM Security</span>
+                    <span class="tech-tag"><i class="fas fa-list mr-2"></i>HTML, CSS, JavaScript</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">Project Objective</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                       <b> Finora </b> is a personal finance management web application designed to help users track, manage, and analyze their income and expenses in an organized and secure way. It provides a simple dashboard where users can record daily transactions, categorize spending, and gain insights into their financial habits.
+                        The main goal of Finora is to make <b>money management easy, visual, and accessible</b>, especially for individuals who want a lightweight and clean alternative to complex finance apps.</p>
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Secure Authentication:</strong> User login/registration handled via server-side PHP logic and session management.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Transaction Logging:</strong> Users can securely record and categorize income and expenditure details.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">DynamoDB Integration:</strong> Transaction data is modeled and persisted using DynamoDB for fast reads/writes.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                        <span class="text-gray-300"><strong class="text-white">Dashboard Summaries:</strong> Basic reporting/visualization logic to show spending trends and net balance.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-10 mb-16">
+                <h2 class="text-3xl font-bold mb-8">☁️ Architecture & Backend Workflow on AWS</h2>
+                
+                <div class="bg-black/40 rounded-2xl border border-white/5 p-4 mb-10 overflow-hidden">
+                    <img 
+                        src="finora-casestudy.png" 
+                        alt="Architecture Diagram" 
+                        class="w-full h-auto rounded-xl hover:scale-[1.02] transition-transform duration-500"
+                    >
+                    <div class="text-center mt-4 text-xs text-gray-500 mono tracking-widest uppercase">
+                        *Architecture showing User Nginx, PHP and DynamoDB flow, all on a single EC2 instance.*
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="ml-6 step-glow">
+                        <h3 class="text-white font-bold mb-2">Detailed Request Flow:</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+        <p>The workflow starts from the user’s browser, where a user initiates actions such as signup or login. These requests are sent to an <b>Amazon EC2 instance</b>, which acts as the core compute layer of the application.</p>
+        
+        <p>On the EC2 instance, <b>Nginx</b> is configured as the web server. Nginx handles incoming HTTP requests and works as a reverse proxy, forwarding dynamic requests to <b>PHP-FPM</b>. PHP-FPM processes the application’s backend logic, such as validating user input, managing sessions, and handling authentication logic for Finora.</p>
+        
+        <p>For data storage and session-related operations, the backend interacts with <b>Amazon DynamoDB</b>. DynamoDB is used to read and write user and session data in a scalable, serverless manner. This removes the need for managing traditional database servers and helps handle variable workloads efficiently.</p>
+        
+        <p>To support authentication-related communication, such as sending verification or system emails, the workflow integrates <b>Amazon SES (Simple Email Service)</b>. PHP-FPM sends requests to SES, which then handles reliable email delivery.</p>
+        
+        <p>Security and permissions are managed using <b>AWS IAM roles</b>. Instead of hardcoding credentials, the EC2 instance uses an IAM role with appropriate permissions to securely access DynamoDB and SES. This approach follows AWS best practices for security and access control.</p>
+        
+        <p>Overall, this architecture demonstrates how Finora can be structured using AWS-native services to build a secure, scalable, and modular backend workflow, while keeping the application logic centralized on EC2.</p>
+        
+        <p>Due to working within an <b>AWS sandbox / learner account</b>, this architecture could not be fully deployed for public or multi-user access. However, the complete design, configuration, and request flow were implemented and validated within the sandbox environment, providing hands-on experience with real AWS services and production-style architecture.</p>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="border-l-2 border-cyan-500/30 pl-8 mb-16">
+                <h2 class="text-2xl font-bold mb-6 uppercase tracking-wider text-cyan-400">Key Outcomes</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">Hands-on Linux Server hardening</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">AWS Managed Services optimization</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">Secure Service-to-Service communication</li>
+                    <li class="bg-white/5 p-4 rounded-xl border border-white/5 text-gray-300">AI-assisted code debugging & refactoring</li>
+                </ul>
+            </div>
+
+            <div class="text-center py-12 border-t border-white/10">
+                <a href="https://github.com/sakshigit07" class="inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-cyan-400 transition-all group">
+                    <i class="fab fa-github text-xl"></i>
+                    <span>Examine Source Code</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        document.querySelectorAll('a, .glass-panel').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>
